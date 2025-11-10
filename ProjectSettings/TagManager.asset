@@ -8,6 +8,7 @@ TagManager:
   - Hidden
   - Keyhole
   - DoorManager
+  - flashlight
   layers:
   - Default
   - TransparentFX

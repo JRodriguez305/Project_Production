@@ -9,10 +9,10 @@ EditorBuildSettings:
     path: Assets/Scenes/TitleScreen_Scene.unity
     guid: f468008cad8b0c2438e190799b4bab84
   - enabled: 1
+    path: Assets/Scenes/StorageRoom.unity
+    guid: 6313041ef96162c4d90b7c4ccd9aec98
+  - enabled: 1
     path: Assets/Scenes/JacksScene.unity
     guid: 53f646dbe24a516469ac992cefdd7129
-  - enabled: 1
-    path: Assets/Scenes/Level2_Scene.unity
-    guid: 80a8f74b768a8bf4b908e341ce2ecba8
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
