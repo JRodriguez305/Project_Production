@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: WoodFloor
+  m_Name: Walls (Chipped 1
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -25,15 +25,15 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 2436459540024ec4287ad50813486fea, type: 3}
+        m_Texture: {fileID: 2800000, guid: 82cdf31614e5d8d4a8adef3c310641dd, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 2.32}
+        m_Scale: {x: 1, y: 13}
         m_Offset: {x: 0, y: 0}
     - _DetailMask:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 3eae5f41f43f0a543a3af7484b30b4d7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailNormalMap:
@@ -42,12 +42,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 13.5, y: 21.36}
-        m_Offset: {x: 0, y: 0}
+        m_Scale: {x: 2.6, y: 7.8}
+        m_Offset: {x: 1.51, y: 1.11}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: a039d0874ad3bae4eb2f5ec0594cce3e, type: 3}
-        m_Scale: {x: 13.5, y: 21.36}
-        m_Offset: {x: 0, y: 0}
+        m_Texture: {fileID: 2800000, guid: 9918788a9e8f6e44f9579fcd58794e03, type: 3}
+        m_Scale: {x: 2.6, y: 7.8}
+        m_Offset: {x: 1.51, y: 1.11}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -79,7 +79,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.5943396, g: 0.5418553, b: 0.49061054, a: 1}
+    - _Color: {r: 0.4245283, g: 0.40557232, b: 0.19023673, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
