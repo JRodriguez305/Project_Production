@@ -14,10 +14,7 @@ public class DialogueHolderBehaviour : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
-        {
-            SayRandomDialogue();
-        }
+        SayRandomDialogue();
     }
 
     public void SayRandomDialogue()

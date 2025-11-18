@@ -22,9 +22,14 @@ public class PickUpFlashlightBehaviour : MonoBehaviour
                 if (hit.collider.gameObject.CompareTag("flashlight"))
                 {
                     Destroy(hit.collider.gameObject); // Destroy the flashlight (the object we hit)
-                    lightManager.gameObject.SetActive(true); // Activate the lightManager
+                    ActiveFlashlight();
                 }
             }
         }
+    }
+
+    public void ActiveFlashlight()
+    {
+        lightManager.gameObject.SetActive(true); // Activate the lightManager
     }
 }
