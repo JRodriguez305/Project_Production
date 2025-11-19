@@ -5014,7 +5014,7 @@ MonoBehaviour:
   itemToAdd:
     itemName: 2''''
   inventory: {fileID: 0}
-  uvFlashlight: {fileID: 0}
+  uvFlashlight: {fileID: 1461274315}
 --- !u!135 &1443454347
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5145,7 +5145,7 @@ MonoBehaviour:
   itemToAdd:
     itemName: 3'''
   inventory: {fileID: 0}
-  uvFlashlight: {fileID: 0}
+  uvFlashlight: {fileID: 1461274315}
 --- !u!135 &1459290991
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5335,6 +5335,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!108 &1461274315 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 5053772062154381885, guid: 247b6111daa99a246bc24a486c57d091, type: 3}
+  m_PrefabInstance: {fileID: 653295931}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1474345472
 GameObject:
   m_ObjectHideFlags: 0
@@ -6390,7 +6395,7 @@ MonoBehaviour:
   itemToAdd:
     itemName: 9'
   inventory: {fileID: 0}
-  uvFlashlight: {fileID: 0}
+  uvFlashlight: {fileID: 1461274315}
 --- !u!135 &1729719935
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7073,7 +7078,7 @@ MonoBehaviour:
   itemToAdd:
     itemName: 6''
   inventory: {fileID: 0}
-  uvFlashlight: {fileID: 0}
+  uvFlashlight: {fileID: 1461274315}
 --- !u!135 &2007346924
 SphereCollider:
   m_ObjectHideFlags: 0
