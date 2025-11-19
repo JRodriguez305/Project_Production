@@ -34,7 +34,7 @@ RenderSettings:
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
-  m_ReflectionBounces: 1
+  m_ReflectionBounces: 2
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
@@ -230,13 +230,41 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1218650635433838816, guid: 38f290bfcc884f84fbbe3f00e6023b48, type: 3}
+      propertyPath: m_Range
+      value: 27.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1218650635433838816, guid: 38f290bfcc884f84fbbe3f00e6023b48, type: 3}
+      propertyPath: m_Intensity
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1218650635433838816, guid: 38f290bfcc884f84fbbe3f00e6023b48, type: 3}
+      propertyPath: m_SpotAngle
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 2819062603486262764, guid: 38f290bfcc884f84fbbe3f00e6023b48, type: 3}
+      propertyPath: near clip plane
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2986577584504874669, guid: 38f290bfcc884f84fbbe3f00e6023b48, type: 3}
+      propertyPath: m_Range
+      value: 55
+      objectReference: {fileID: 0}
     - target: {fileID: 2986577584504874669, guid: 38f290bfcc884f84fbbe3f00e6023b48, type: 3}
       propertyPath: m_Intensity
-      value: 1
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2986577584504874669, guid: 38f290bfcc884f84fbbe3f00e6023b48, type: 3}
+      propertyPath: m_SpotAngle
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5523861971683418601, guid: 38f290bfcc884f84fbbe3f00e6023b48, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5823990387092053841, guid: 38f290bfcc884f84fbbe3f00e6023b48, type: 3}
+      propertyPath: moveSpeed
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 6022236942635520782, guid: 38f290bfcc884f84fbbe3f00e6023b48, type: 3}
       propertyPath: m_LocalScale.x
@@ -851,10 +879,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2997180350891878875, guid: 2fd906dac5364ec4b921cc5a2df91841, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: d069518f848b0224390ae4fb76bcf6d2, type: 2}
+    - target: {fileID: 280826930764172706, guid: 2fd906dac5364ec4b921cc5a2df91841, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: d069518f848b0224390ae4fb76bcf6d2, type: 2}
     - target: {fileID: 919132149155446097, guid: 2fd906dac5364ec4b921cc5a2df91841, type: 3}
       propertyPath: m_Name
       value: Room 0 Objects Temp Fix
       objectReference: {fileID: 0}
+    - target: {fileID: 5721519642854034310, guid: 2fd906dac5364ec4b921cc5a2df91841, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: eb8b87ffe2ca2c840b147bba6a286c35, type: 2}
+    - target: {fileID: 8039439130063815655, guid: 2fd906dac5364ec4b921cc5a2df91841, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: eb8b87ffe2ca2c840b147bba6a286c35, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1002,7 +1046,7 @@ PrefabInstance:
     - target: {fileID: 2370593915535417392, guid: a0435a501422f38419ddfc03e0603976, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 08c5fc064d5ee764e8449eb60f205e85, type: 2}
+      objectReference: {fileID: 2100000, guid: 3e3d471c4036c9a4b9d0033cddd9009b, type: 2}
     - target: {fileID: 4321514657177891973, guid: a0435a501422f38419ddfc03e0603976, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -1380,7 +1424,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
