@@ -632,7 +632,7 @@ MonoBehaviour:
   interactPrompt: {fileID: 1814740675}
   messageText: {fileID: 218226288}
   promptMessage: Left Click to Interact
-  pickupMessage: Item Acquired!
+  pickupMessage: 
   interactRange: 4
   messageDuration: 2.5
   pickupSound: {fileID: 0}
@@ -1609,6 +1609,10 @@ PrefabInstance:
     - target: {fileID: 232641516119380621, guid: 247b6111daa99a246bc24a486c57d091, type: 3}
       propertyPath: m_Center.y
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2098723714983171383, guid: 247b6111daa99a246bc24a486c57d091, type: 3}
+      propertyPath: mouseSensitivity
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6226101791015107735, guid: 247b6111daa99a246bc24a486c57d091, type: 3}
       propertyPath: m_Name

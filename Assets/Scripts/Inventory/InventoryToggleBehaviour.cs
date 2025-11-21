@@ -12,7 +12,7 @@ public class InventoryToggleBehaviour : MonoBehaviour
     void Update()
     {
         // Check for the key press
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
             ToggleInventory();
         }

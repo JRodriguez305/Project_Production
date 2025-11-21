@@ -38,11 +38,11 @@ public class FirstPersonPlayerMovementBehaviour : MonoBehaviour
 
         if (mouseLookEnabled)
         {
-            float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-            float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+            float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
+            float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
 
 
-            xRotation -= mouseY;
+            xRotation -= mouseY * Time.deltaTime * 50f;
             xRotation = Mathf.Clamp(xRotation, -90f, 90f); // This should prevent "flipping"
 
             cameraTransform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);

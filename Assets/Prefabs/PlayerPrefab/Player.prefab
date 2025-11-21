@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  mouseSensitivity: 750
+  mouseSensitivity: 1
   mouseLookDelay: 0.1
 --- !u!114 &1811673797660928440
 MonoBehaviour:
