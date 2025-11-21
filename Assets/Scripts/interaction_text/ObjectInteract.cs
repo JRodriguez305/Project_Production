@@ -16,7 +16,7 @@ public class ObjectInteract : MonoBehaviour
     public float messageDuration = 2.5f;
 
     [Header("Audio")]
-    public AudioClip pickupSound;   // 🎵 ← drag clip here
+    public AudioClip pickupSound;
     private AudioSource audioSource;
 
     private Transform playerCam;
@@ -27,23 +27,20 @@ public class ObjectInteract : MonoBehaviour
     private float checkDelay = 0f;
     private const float CHECK_INTERVAL = 0.08f;
 
+    private HiddenObjectBehaviour hiddenObj;
+
     void Start()
     {
         playerCam = Camera.main.transform;
 
-        if (interactPrompt) interactPrompt.gameObject.SetActive(false);
-        if (messageText) messageText.gameObject.SetActive(false);
+        // Start UI invisible (no SetActive)
+        SetAlpha(interactPrompt, 0f);
+        SetAlpha(messageText, 0f);
 
-        // Avoid physics jitter if object has collider
-        if (TryGetComponent(out Collider col))
-            col.isTrigger = true;
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.playOnAwake = false;
 
-        // 🎵 AUTO-CREATE AUDIOSOURCE IF SOUND ASSIGNED
-        if (pickupSound != null)
-        {
-            audioSource = gameObject.AddComponent<AudioSource>();
-            audioSource.playOnAwake = false;
-        }
+        hiddenObj = GetComponent<HiddenObjectBehaviour>();
     }
 
     void Update()
@@ -59,8 +56,8 @@ public class ObjectInteract : MonoBehaviour
         {
             hideTimer -= Time.deltaTime;
 
-            if (hideTimer <= 0f && messageText.gameObject.activeSelf)
-                messageText.gameObject.SetActive(false);
+            if (hideTimer <= 0f)
+                SetAlpha(messageText, 0f); // fade out, no snapping
         }
     }
 
@@ -68,8 +65,21 @@ public class ObjectInteract : MonoBehaviour
     {
         checkDelay -= Time.deltaTime;
         if (checkDelay > 0f) return;
-
         checkDelay = CHECK_INTERVAL;
+
+        // Hidden? Don’t allow interaction
+        if (hiddenObj != null)
+        {
+            Renderer r = GetComponent<Renderer>();
+            Collider c = GetComponent<Collider>();
+
+            if ((r && !r.enabled) || (c && !c.enabled))
+            {
+                SetAlpha(interactPrompt, 0f); // hide prompt safely
+                isNear = false;
+                return;
+            }
+        }
 
         float dist = Vector3.Distance(playerCam.position, transform.position);
         bool nowNear = dist <= interactRange;
@@ -84,13 +94,15 @@ public class ObjectInteract : MonoBehaviour
 
     void ShowPrompt()
     {
+        if (!interactPrompt) return;
         interactPrompt.text = promptMessage;
-        interactPrompt.gameObject.SetActive(true);
+        SetAlpha(interactPrompt, 1f); // fade in — no SetActive
     }
 
     void HidePrompt()
     {
-        interactPrompt.gameObject.SetActive(false);
+        if (!interactPrompt) return;
+        SetAlpha(interactPrompt, 0f); // fade out — no SetActive
     }
 
     void Pickup()
@@ -98,25 +110,35 @@ public class ObjectInteract : MonoBehaviour
         interacted = true;
         HidePrompt();
 
-        // 🟢 SHOW SECOND MESSAGE
-        messageText.text = pickupMessage;
-        messageText.gameObject.SetActive(true);
+        if (messageText != null)
+        {
+            messageText.text = pickupMessage;
+            SetAlpha(messageText, 1f); // fade in — smooth
+        }
+
         hideTimer = messageDuration;
 
-        // 🎵 PLAY SOUND
         if (pickupSound != null)
             audioSource.PlayOneShot(pickupSound);
+
         var pick = GetComponent<PickUpFlashlightBehaviour>();
         if (pick != null)
-        {
             pick.ActiveFlashlight();
-        }
-        // 🟥 REMOVE VISUAL + COLLISION
+
         if (TryGetComponent(out Renderer r)) r.enabled = false;
         if (TryGetComponent(out Collider c)) c.enabled = false;
 
-        // ❗ Wait long enough for message + audio
-        float destroyDelay = messageDuration + (pickupSound ? pickupSound.length : 0.25f);
+        float destroyDelay = messageDuration +
+                             (pickupSound != null ? pickupSound.length : 0.25f);
         Destroy(gameObject, destroyDelay);
+    }
+
+    // 🔥 The magic fix — changes alpha without rebuilding UI
+    void SetAlpha(TMP_Text text, float a)
+    {
+        if (!text) return;
+        Color c = text.color;
+        c.a = a;
+        text.color = c;
     }
 }

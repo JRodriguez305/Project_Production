@@ -9,6 +9,7 @@ TagManager:
   - Keyhole
   - DoorManager
   - flashlight
+  - Interactable
   layers:
   - Default
   - TransparentFX
