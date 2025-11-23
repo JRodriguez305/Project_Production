@@ -4020,7 +4020,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7779f144e007f34a8eb6a8e1e29082e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KeypadManager
-  correctCode: 9632
+  correctCode: 2389
   maxDigits: 4
   displayText: {fileID: 1563237518}
   keypadCanvas: {fileID: 227964879}
@@ -4607,7 +4607,7 @@ Transform:
   m_GameObject: {fileID: 727794571}
   serializedVersion: 2
   m_LocalRotation: {x: 0.000000014901161, y: 0.000000044703484, z: -1, w: 0.000000044703484}
-  m_LocalPosition: {x: -0.0111179035, y: 0.06595, z: -0.0011999964}
+  m_LocalPosition: {x: -0.06179, y: 0.03308, z: 0.00346}
   m_LocalScale: {x: 0.23444, y: 0.0712248, z: 0.13776998}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7350,7 +7350,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -512.1331, w: 0}
+  m_margin: {x: 0, y: 0, z: -9.002014, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -8661,9 +8661,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'New Text
-
-'
+  m_text: "\u201CThis cake reminds me of the first birthday I can remember. Gosh,
+    I had SO MUCH cake then.. Just, how many did I eat?\u201D"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8728,7 +8727,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -512.1331, w: 0}
+  m_margin: {x: 0, y: 0, z: -2.4680786, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -10313,7 +10312,7 @@ Transform:
   m_GameObject: {fileID: 1596973460}
   serializedVersion: 2
   m_LocalRotation: {x: -0.000000029802326, y: -0, z: 0.7071068, w: 0.70710677}
-  m_LocalPosition: {x: -0.066619955, y: -0.04028211, z: 0}
+  m_LocalPosition: {x: 0.11246, y: 0.37134, z: 0.49294}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10360,8 +10359,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.012226565, y: 0.012062305, z: 0.01902596}
+  m_Center: {x: -0.37112564, y: 0.110214904, z: -0.48558348}
 --- !u!1 &1610504435 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7823584665516925766, guid: e03080f12b30aa144830c02c438e06da, type: 3}
@@ -11153,7 +11152,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -512.1331, w: 0}
+  m_margin: {x: 0, y: 0, z: -10.4158325, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -11403,7 +11402,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 232.56161, w: 0}
+  m_margin: {x: 0, y: 0, z: -9.002899, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -11958,7 +11957,7 @@ Transform:
   m_GameObject: {fileID: 1987881791}
   serializedVersion: 2
   m_LocalRotation: {x: -0.000000029802326, y: -0, z: 0.7071068, w: 0.70710677}
-  m_LocalPosition: {x: 0.0012, y: 0.0004, z: -0.0012}
+  m_LocalPosition: {x: 0.0337, y: 0.063, z: 0.00283}
   m_LocalScale: {x: 0.23444001, y: 0.07122481, z: 0.13777}
   m_ConstrainProportionsScale: 0
   m_Children: []
