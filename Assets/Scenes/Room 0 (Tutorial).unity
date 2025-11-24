@@ -633,9 +633,9 @@ MonoBehaviour:
   messageText: {fileID: 218226288}
   promptMessage: Left Click to Interact
   pickupMessage: 
-  interactRange: 4
-  messageDuration: 2.5
-  pickupSound: {fileID: 0}
+  interactRange: 1
+  messageDuration: 1.5
+  pickupSound: {fileID: 8300000, guid: 8c4171a1cf50cc846b3db8ebcd996d28, type: 3}
 --- !u!1 &698087294 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 515449337777157432, guid: a0435a501422f38419ddfc03e0603976, type: 3}
@@ -1513,13 +1513,13 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: cd51db41c741f614b8e64e3735056774, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.633
-  m_Pitch: 1
+  m_Volume: 0.08
+  m_Pitch: -1.54
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 47
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
