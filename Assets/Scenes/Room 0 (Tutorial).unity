@@ -494,7 +494,7 @@ MonoBehaviour:
   pickupMessage: Item Acquired!
   interactRange: 2
   messageDuration: 2.5
-  pickupSound: {fileID: 8300000, guid: 8c4171a1cf50cc846b3db8ebcd996d28, type: 3}
+  pickupSound: {fileID: 8300000, guid: b583b680d0a4ed0418b4825c119329ea, type: 3}
 --- !u!114 &546679096
 MonoBehaviour:
   m_ObjectHideFlags: 0
