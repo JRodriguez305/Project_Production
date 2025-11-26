@@ -11255,7 +11255,7 @@ MonoBehaviour:
   promptMessage: Left Click to Interact
   dialogueTitle: Birthday Gluttony
   dialogueBody: "\u201CThis cake reminds me of my first birthday. Gosh.. All I remember
-    was having one slice, then another?\u201D"
+    was having one slice, then another.\u201D"
   interactRange: 3
   panelActiveTime: 20
   objectToReveal: {fileID: 784556511}
@@ -12810,7 +12810,7 @@ MonoBehaviour:
   promptMessage: Left Click to Interact
   dialogueTitle: The End.
   dialogueBody: "\u201CThe.. End? I don\u2019t get this one. Just some stupid art
-    with nine circles in it. Honestly, this exhibit needs original artists..\u201D"
+    with circles in it. Honestly, this exhibit needs original artists..\u201D"
   interactRange: 3
   panelActiveTime: 20
   objectToReveal: {fileID: 1463444358}
