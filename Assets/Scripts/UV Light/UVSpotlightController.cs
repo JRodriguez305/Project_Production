@@ -12,47 +12,63 @@ public class UVSpotlightController : MonoBehaviour
     [Range(0.5f, 30f)] public float range = 10f;
 
     [Header("Wall Spread Settings")]
-    public float minDistance = 0.5f;  // Distance at which beam is widest
-    public float maxDistance = 5f;    // Normal beam range
-    public float maxSpreadMultiplier = 2f; // How wide cone gets when close
-    public float closeIntensityMultiplier = 0.6f; // Slight dim when near wall
+    public float minDistance = 0.5f;
+    public float maxDistance = 5f;
+    public float maxSpreadMultiplier = 2f;
+    public float closeIntensityMultiplier = 0.6f;
 
     private Material mat;
 
     void Start()
     {
         mat = GetComponent<Renderer>().material;
+
         mat.SetColor("_GlowColor", glowColor);
         mat.SetFloat("_Range", range);
         mat.SetFloat("_Intensity", baseIntensity);
+
+        // Make sure UV starts OFF
+        mat.SetFloat("_UVActive", 0f);
     }
 
     void Update()
     {
-        if (uvFlashlight != null && uvFlashlight.gameObject.activeInHierarchy)
+        bool uvOn = (uvFlashlight != null && uvFlashlight.gameObject.activeInHierarchy);
+
+        // 🔥 Tell shader UV on/off
+        mat.SetFloat("_UVActive", uvOn ? 1f : 0f);
+
+        if (!uvOn)
+            return; // stop here (shader will auto output nothing)
+
+
+        // -----------------------
+        // 🔥 UV IS ON → Update all values
+        // -----------------------
+
+        float spreadMultiplier = 1f;
+        float intensityMultiplier = 1f;
+
+        if (Physics.Raycast(uvFlashlight.transform.position, uvFlashlight.transform.forward,
+                            out RaycastHit hit, maxDistance))
         {
+            float dist = Mathf.Clamp(hit.distance, minDistance, maxDistance);
+            float t = 1f - Mathf.InverseLerp(minDistance, maxDistance, dist);
 
-            // Default multipliers
-            float spreadMultiplier = 1f;
-            float intensityMultiplier = 1f;
-
-            // ✅ Raycast forward from the flashlight to detect walls
-            if (Physics.Raycast(uvFlashlight.transform.position, uvFlashlight.transform.forward, out RaycastHit hit, maxDistance))
-            {
-                float dist = Mathf.Clamp(hit.distance, minDistance, maxDistance);
-                float t = 1f - Mathf.InverseLerp(minDistance, maxDistance, dist);
-
-                spreadMultiplier = Mathf.Lerp(1f, maxSpreadMultiplier, t);
-                intensityMultiplier = Mathf.Lerp(1f, closeIntensityMultiplier, t);
-            }
-
-            // Update shader parameters
-            mat.SetVector("_LightPos", uvFlashlight.transform.position);
-            mat.SetVector("_LightDir", uvFlashlight.transform.forward);
-
-            float coneAngle = uvFlashlight.spotAngle * 0.5f * Mathf.Deg2Rad * spreadMultiplier;
-            mat.SetFloat("_ConeAngle", coneAngle);
-            mat.SetFloat("_Intensity", baseIntensity * intensityMultiplier);
+            spreadMultiplier = Mathf.Lerp(1f, maxSpreadMultiplier, t);
+            intensityMultiplier = Mathf.Lerp(1f, closeIntensityMultiplier, t);
         }
+
+        // Required shader inputs
+        mat.SetVector("_LightPos", uvFlashlight.transform.position);
+        mat.SetVector("_LightDir", uvFlashlight.transform.forward);
+
+        // Cone angle update
+        float coneAngle = uvFlashlight.spotAngle * 0.5f * Mathf.Deg2Rad * spreadMultiplier;
+        mat.SetFloat("_ConeAngle", coneAngle);
+
+        // Adjusted glow intensity
+        mat.SetFloat("_Intensity", baseIntensity * intensityMultiplier);
     }
 }
+

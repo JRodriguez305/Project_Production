@@ -1,4 +1,4 @@
-Shader "Custom/UVFootstepOutline"
+﻿Shader "Custom/UVFootstepOutline"
 {
     Properties
     {
@@ -6,6 +6,7 @@ Shader "Custom/UVFootstepOutline"
         _GlowColor ("Glow Color", Color) = (0.5,0,1,1)
         _GlowIntensity ("Glow Intensity", Float) = 5
         _ConeAngle ("Spotlight Cone Angle", Float) = 0.5
+        _UVActive ("UV Light Active", Float) = 0   // 🔥 NEW
     }
 
     SubShader
@@ -38,6 +39,7 @@ Shader "Custom/UVFootstepOutline"
             float3 _LightPos;
             float3 _LightDir;
             float _ConeAngle;
+            float _UVActive;       // 🔥 NEW
             fixed4 _GlowColor;
             float _GlowIntensity;
 
@@ -52,13 +54,13 @@ Shader "Custom/UVFootstepOutline"
 
             fixed4 frag(v2f i) : SV_Target
             {
-                // Sample footprint texture
-                float alpha = tex2D(_FootprintTex, i.uv).r; // white = footprint, black = background
+                // 🔥 If UV light is OFF → return invisible
+                if (_UVActive < 0.5)
+                    return fixed4(0,0,0,0);
 
-                // Create outline: edge = where alpha > 0 but neighbor < 1
-                float edge = smoothstep(0.1, 0.3, alpha); // tweak to get thin outline
+                float alpha = tex2D(_FootprintTex, i.uv).r;
+                float edge = smoothstep(0.1, 0.3, alpha);
 
-                // UV light calculation
                 float3 fragDir = normalize(i.worldPos - _LightPos);
                 float dotAngle = dot(fragDir, normalize(_LightDir));
                 float intensity = smoothstep(cos(_ConeAngle), 1.0, dotAngle);

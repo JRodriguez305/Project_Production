@@ -1226,6 +1226,8 @@ GameObject:
   - component: {fileID: 220996619}
   - component: {fileID: 220996618}
   - component: {fileID: 220996617}
+  - component: {fileID: 220996622}
+  - component: {fileID: 220996625}
   m_Layer: 6
   m_Name: Quad (2)
   m_TagString: Untagged
@@ -1346,6 +1348,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &220996622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220996616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c57b42f2330dcbc40aa4f0fe9bfe4723, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RevealEffects
+  revealSound: {fileID: 8300000, guid: dcb0ffa28e580b44999f7a88bcd3d0d6, type: 3}
+  shimmerDuration: 1.2
+  shimmerScaleMultiplier: 1.15
+--- !u!114 &220996625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220996616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed9132b2803f46f46b964c3cb242c54a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SubtleParticleShimmer
+  duration: 1.2
+  particleSize: 0.06
+  particleSpeed: 0.2
+  particleColor: {r: 1, g: 0.8, b: 1, a: 0.8}
 --- !u!1 &227964879
 GameObject:
   m_ObjectHideFlags: 0
@@ -1678,7 +1711,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InteractionScript
   interactPrompt: {fileID: 1110489836}
   promptMessage: Left Click to Interact
-  interactRange: 4
+  interactRange: 3
   interactTarget: {fileID: 233900654}
   interactMethod: Interact
 --- !u!1 &236905797
@@ -3657,7 +3690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5c1309e6fe615449b4628b92ce3be74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueInteraction
-  interactPrompt: {fileID: 865339171}
+  interactPrompt: {fileID: 1965330067}
   dialoguePanel: {fileID: 1255794674}
   dialogueTitleText: {fileID: 2066628342}
   dialogueBodyText: {fileID: 1819820914}
@@ -3666,7 +3699,9 @@ MonoBehaviour:
   dialogueBody: "\u201CI\u2026 remember going to this university in Arizona. I took
     so many classes after flunking some. It couldn't have been more than ten..\u201D\n"
   interactRange: 4
-  panelActiveTime: 3
+  panelActiveTime: 10
+  objectToReveal: {fileID: 220996616}
+  revealImmediately: 0
 --- !u!65 &492417507
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3815,7 +3850,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InteractionScript
   interactPrompt: {fileID: 347817042}
   promptMessage: Left Click to Interact
-  interactRange: 4
+  interactRange: 3
   interactTarget: {fileID: 522888228}
   interactMethod: Interact
 --- !u!1 &534221031
@@ -5029,8 +5064,10 @@ MonoBehaviour:
   dialogueBody: You know.. This one reminds me of an old bracelet I got from my mom.
     It had a couple charms on them. To represent my family.. just us against this
     world. I wish her and my dad were here with me.."
-  interactRange: 4
-  panelActiveTime: 3
+  interactRange: 3
+  panelActiveTime: 10
+  objectToReveal: {fileID: 1025398632}
+  revealImmediately: 0
 --- !u!65 &727794574
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5143,6 +5180,8 @@ GameObject:
   - component: {fileID: 784556514}
   - component: {fileID: 784556513}
   - component: {fileID: 784556512}
+  - component: {fileID: 784556518}
+  - component: {fileID: 784556517}
   m_Layer: 6
   m_Name: Quad (3)
   m_TagString: Untagged
@@ -5263,6 +5302,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
+--- !u!114 &784556517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784556511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed9132b2803f46f46b964c3cb242c54a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SubtleParticleShimmer
+  duration: 1.2
+  particleSize: 0.06
+  particleSpeed: 0.2
+  particleColor: {r: 1, g: 0.8, b: 1, a: 0.8}
+--- !u!114 &784556518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784556511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c57b42f2330dcbc40aa4f0fe9bfe4723, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RevealEffects
+  revealSound: {fileID: 8300000, guid: dcb0ffa28e580b44999f7a88bcd3d0d6, type: 3}
+  shimmerDuration: 0.5
+  shimmerScaleMultiplier: 1.2
 --- !u!1 &788222889
 GameObject:
   m_ObjectHideFlags: 0
@@ -6706,9 +6776,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7091319229fd1fa47a3bcd0dbe119a05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionScript
-  interactPrompt: {fileID: 865339171}
+  interactPrompt: {fileID: 1965330067}
   promptMessage: Left Click to Interact
-  interactRange: 4
+  interactRange: 3
   interactTarget: {fileID: 1010245484}
   interactMethod: Interact
 --- !u!4 &1010245485 stripped
@@ -6729,6 +6799,8 @@ GameObject:
   - component: {fileID: 1025398635}
   - component: {fileID: 1025398634}
   - component: {fileID: 1025398633}
+  - component: {fileID: 1025398639}
+  - component: {fileID: 1025398638}
   m_Layer: 6
   m_Name: Quad (1)
   m_TagString: Untagged
@@ -6849,6 +6921,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1025398638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025398632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed9132b2803f46f46b964c3cb242c54a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SubtleParticleShimmer
+  duration: 1.2
+  particleSize: 0.06
+  particleSpeed: 0.2
+  particleColor: {r: 1, g: 0.8, b: 1, a: 0.8}
+--- !u!114 &1025398639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025398632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c57b42f2330dcbc40aa4f0fe9bfe4723, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RevealEffects
+  revealSound: {fileID: 8300000, guid: dcb0ffa28e580b44999f7a88bcd3d0d6, type: 3}
+  shimmerDuration: 0.5
+  shimmerScaleMultiplier: 1.2
 --- !u!1 &1026986035
 GameObject:
   m_ObjectHideFlags: 0
@@ -9517,6 +9620,8 @@ GameObject:
   - component: {fileID: 1463444360}
   - component: {fileID: 1463444359}
   - component: {fileID: 1463444363}
+  - component: {fileID: 1463444365}
+  - component: {fileID: 1463444364}
   m_Layer: 6
   m_Name: Quad
   m_TagString: Untagged
@@ -9637,6 +9742,37 @@ MonoBehaviour:
   maxDistance: 5
   maxSpreadMultiplier: 2
   closeIntensityMultiplier: 0.6
+--- !u!114 &1463444364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463444358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed9132b2803f46f46b964c3cb242c54a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SubtleParticleShimmer
+  duration: 1.2
+  particleSize: 0.06
+  particleSpeed: 0.2
+  particleColor: {r: 1, g: 0.8, b: 1, a: 0.8}
+--- !u!114 &1463444365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463444358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c57b42f2330dcbc40aa4f0fe9bfe4723, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RevealEffects
+  revealSound: {fileID: 8300000, guid: dcb0ffa28e580b44999f7a88bcd3d0d6, type: 3}
+  shimmerDuration: 0.5
+  shimmerScaleMultiplier: 1.2
 --- !u!1 &1474345472
 GameObject:
   m_ObjectHideFlags: 0
@@ -10398,7 +10534,7 @@ MonoBehaviour:
   messageText: {fileID: 0}
   promptMessage: Press E to Interact
   pickupMessage: 
-  interactRange: 4
+  interactRange: 3
   messageDuration: 2.5
   pickupSound: {fileID: 0}
 --- !u!1 &1547892158 stripped
@@ -10871,8 +11007,10 @@ MonoBehaviour:
   dialogueTitle: Birthday Gluttony
   dialogueBody: "\u201CThis cake reminds me of the first birthday I can remember.
     Gosh, I had SO MUCH cake then.. Just, how many did I eat?\u201D"
-  interactRange: 4
-  panelActiveTime: 3
+  interactRange: 3
+  panelActiveTime: 10
+  objectToReveal: {fileID: 784556511}
+  revealImmediately: 0
 --- !u!65 &1596973463
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12361,7 +12499,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InteractionScript
   interactPrompt: {fileID: 1965330067}
   promptMessage: Left Click to Interact
-  interactRange: 4
+  interactRange: 3
   interactTarget: {fileID: 1976972129}
   interactMethod: Interact
 --- !u!1 &1987881791
@@ -12417,8 +12555,10 @@ MonoBehaviour:
   dialogueTitle: The End.
   dialogueBody: "\u201CThe.. End? I don\u2019t get this one. Just some stupid art
     with 9 circles in it. Honestly, this exhibit needs original artists..\u201D"
-  interactRange: 4
-  panelActiveTime: 3
+  interactRange: 3
+  panelActiveTime: 10
+  objectToReveal: {fileID: 1463444358}
+  revealImmediately: 0
 --- !u!65 &1987881794
 BoxCollider:
   m_ObjectHideFlags: 0

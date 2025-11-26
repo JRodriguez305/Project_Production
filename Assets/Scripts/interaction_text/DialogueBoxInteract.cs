@@ -21,10 +21,15 @@ public class DialogueInteraction : MonoBehaviour
     public float interactRange = 4f;
 
     [Header("Timing")]
-    public float panelActiveTime = 3f;   // how long panel stays open
+    public float panelActiveTime = 3f;
+
+    [Header("Reveal Settings")]
+    public GameObject objectToReveal;
+    public bool revealImmediately = false;
 
     private float panelTimer = 0f;
     private bool dialogueOpen = false;
+    private bool revealed = false;
     private Camera cam;
 
     void Start()
@@ -33,24 +38,42 @@ public class DialogueInteraction : MonoBehaviour
 
         SetPromptAlpha(0f);
         dialoguePanel.SetActive(false);
+
+        if (objectToReveal)
+            objectToReveal.SetActive(false);
     }
 
     void Update()
     {
+        // --------------------------------------------------------
+        // 🔥 NEW — Left click closes dialogue
+        // --------------------------------------------------------
         if (dialogueOpen)
         {
             panelTimer += Time.deltaTime;
 
+            // Close on timer
             if (panelTimer >= panelActiveTime)
+            {
                 CloseDialogue();
+                return;
+            }
+
+            // NEW: Close on left click anywhere
+            if (Input.GetMouseButtonDown(0))
+            {
+                CloseDialogue();
+                return;
+            }
 
             return;
         }
+        // --------------------------------------------------------
 
+        // Standard interact logic
         bool looking = IsLookingAtObject();
         interactPrompt.text = promptMessage;
 
-        // fade prompt
         float target = looking ? 1f : 0f;
         float current = interactPrompt.color.a;
         float newA = Mathf.Lerp(current, target, Time.deltaTime * 12f);
@@ -77,6 +100,9 @@ public class DialogueInteraction : MonoBehaviour
         dialoguePanel.SetActive(true);
         dialogueTitleText.text = dialogueTitle;
         dialogueBodyText.text = dialogueBody;
+
+        if (revealImmediately && !revealed)
+            RevealObject();
     }
 
     void CloseDialogue()
@@ -85,6 +111,23 @@ public class DialogueInteraction : MonoBehaviour
         panelTimer = 0f;
 
         dialoguePanel.SetActive(false);
+
+        if (!revealImmediately && !revealed)
+            RevealObject();
+    }
+
+    void RevealObject()
+    {
+        revealed = true;
+
+        if (objectToReveal)
+        {
+            objectToReveal.SetActive(true);
+
+            RevealEffects fx = objectToReveal.GetComponent<RevealEffects>();
+            if (fx != null)
+                fx.PlayRevealEffects();
+        }
     }
 
     void SetPromptAlpha(float a)
