@@ -3696,8 +3696,9 @@ MonoBehaviour:
   dialogueBodyText: {fileID: 1819820914}
   promptMessage: Left Click to Interact
   dialogueTitle: College Memoir
-  dialogueBody: "\u201CI\u2026 remember going to this university in Arizona. I took
-    so many classes after flunking some. It couldn't have been more than ten..\u201D\n"
+  dialogueBody: " \u201CI remember going here.. I fell behind so quick that my third
+    semester I had to take extra classes.. It only got worse from there. I can't
+    remember how many I took.. it was all a blur.\u201D\n"
   interactRange: 4
   panelActiveTime: 10
   objectToReveal: {fileID: 220996616}
@@ -5061,9 +5062,9 @@ MonoBehaviour:
   dialogueBodyText: {fileID: 1203623213}
   promptMessage: Left Click to Interact
   dialogueTitle: Charming Diamonds
-  dialogueBody: You know.. This one reminds me of an old bracelet I got from my mom.
-    It had a couple charms on them. To represent my family.. just us against this
-    world. I wish her and my dad were here with me.."
+  dialogueBody: "\u201CYou know.. This one reminds me of an old bracelet I got from
+    my mom. It had a couple charms on them to represent our family. It was just me,
+    my dad and my mom.. I wish they were here with me\u201D"
   interactRange: 3
   panelActiveTime: 10
   objectToReveal: {fileID: 1025398632}
@@ -10985,8 +10986,8 @@ MonoBehaviour:
   dialogueBodyText: {fileID: 1819820914}
   promptMessage: Left Click to Interact
   dialogueTitle: Birthday Gluttony
-  dialogueBody: "\u201CThis cake reminds me of the first birthday I can remember.
-    Gosh, I had SO MUCH cake then.. Just, how many did I eat?\u201D"
+  dialogueBody: "\u201CThis cake reminds me of my first birthday. Gosh.. All I remember
+    was having one slice, then another?\u201D"
   interactRange: 3
   panelActiveTime: 10
   objectToReveal: {fileID: 784556511}
@@ -12534,7 +12535,7 @@ MonoBehaviour:
   promptMessage: Left Click to Interact
   dialogueTitle: The End.
   dialogueBody: "\u201CThe.. End? I don\u2019t get this one. Just some stupid art
-    with 9 circles in it. Honestly, this exhibit needs original artists..\u201D"
+    with nine circles in it. Honestly, this exhibit needs original artists..\u201D"
   interactRange: 3
   panelActiveTime: 10
   objectToReveal: {fileID: 1463444358}
