@@ -1,36 +1,79 @@
-using UnityEngine;
+﻿using UnityEngine;
+using TMPro;
 
 public class KeypadTrigger : MonoBehaviour
 {
+    [Header("References")]
     public KeypadManager keypad;
+
+    [Header("UI")]
+    public TMP_Text interactText;       // "Press E to Interact"
+    public string promptMessage = "Press E to Interact";
+
+    [Header("Settings")]
     public float interactDistance = 3f;
-    Transform player;
+
+    private Transform player;
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        // FPS camera or Player
+        if (Camera.main != null)
+            player = Camera.main.transform;
+        else
+            player = GameObject.FindGameObjectWithTag("Player").transform;
+
+        if (interactText)
+            interactText.gameObject.SetActive(false);
     }
 
     void Update()
     {
-        if (!player) return;
+        if (!player || !keypad) return;
 
         float dist = Vector3.Distance(player.position, transform.position);
 
-        // Close keypad if player walks away
-        if (keypad.keypadOpen && dist > interactDistance)
+        // --------------------------------------------
+        // 🔥 1. Out of range → hide prompt + close keypad
+        // --------------------------------------------
+        if (dist > interactDistance)
         {
-            keypad.HideKeypad();
+            if (interactText) interactText.gameObject.SetActive(false);
+
+            if (keypad.keypadOpen)
+                keypad.HideKeypad();
+
             return;
         }
 
-        // Open keypad when pressing E near cube
-        if (!keypad.keypadOpen && dist <= interactDistance)
+        // --------------------------------------------
+        // 🔥 2. If keypad is open → NEVER show interact text
+        // --------------------------------------------
+        if (keypad.keypadOpen)
         {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                keypad.ShowKeypad();
-            }
+            if (interactText) interactText.gameObject.SetActive(false);
+            return;
+        }
+
+        // --------------------------------------------
+        // 🔥 3. In range + keypad closed → show prompt
+        // --------------------------------------------
+        if (interactText)
+        {
+            interactText.text = promptMessage;
+            interactText.gameObject.SetActive(true);
+        }
+
+        // --------------------------------------------
+        // 🔥 4. Press E to open keypad
+        // --------------------------------------------
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            keypad.ShowKeypad();
+
+            // Force hide text so both UI layers never overlap
+            if (interactText)
+                interactText.gameObject.SetActive(false);
         }
     }
 }
