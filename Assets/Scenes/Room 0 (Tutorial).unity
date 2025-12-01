@@ -942,6 +942,80 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.011242564, y: 0.017420454, z: 0.025107376}
   m_Center: {x: 6.490903e-10, y: 0.0061548576, z: 0.012368193}
+--- !u!1001 &724866452
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 8a9a9eb630f92434388ed7e04c99a4c2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.8414341
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8a9a9eb630f92434388ed7e04c99a4c2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.52103555
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8a9a9eb630f92434388ed7e04c99a4c2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 25.122063
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8a9a9eb630f92434388ed7e04c99a4c2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8a9a9eb630f92434388ed7e04c99a4c2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8a9a9eb630f92434388ed7e04c99a4c2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8a9a9eb630f92434388ed7e04c99a4c2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8a9a9eb630f92434388ed7e04c99a4c2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8a9a9eb630f92434388ed7e04c99a4c2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8a9a9eb630f92434388ed7e04c99a4c2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2113144324320390294, guid: 8a9a9eb630f92434388ed7e04c99a4c2, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9e59cfdbf646e1b489b76f018eabd080, type: 2}
+    - target: {fileID: 919132149155446097, guid: 8a9a9eb630f92434388ed7e04c99a4c2, type: 3}
+      propertyPath: m_Name
+      value: Player Vintage Flashlight
+      objectReference: {fileID: 0}
+    - target: {fileID: 6142543853614820099, guid: 8a9a9eb630f92434388ed7e04c99a4c2, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b9390f05ebf6fba459b4d4925b797647, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8a9a9eb630f92434388ed7e04c99a4c2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1687254355}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8a9a9eb630f92434388ed7e04c99a4c2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1687254354}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8a9a9eb630f92434388ed7e04c99a4c2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1687254353}
+  m_SourcePrefab: {fileID: 100100000, guid: 8a9a9eb630f92434388ed7e04c99a4c2, type: 3}
 --- !u!1 &748783144
 GameObject:
   m_ObjectHideFlags: 0
@@ -2391,6 +2465,53 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0, y: 0.07675484, z: 0.03853237}
   m_Center: {x: 0.027930101, y: 0, z: -0.0028657555}
+--- !u!1 &1687254352 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8a9a9eb630f92434388ed7e04c99a4c2, type: 3}
+  m_PrefabInstance: {fileID: 724866452}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1687254353
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687254352}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1687254354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687254352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e7518c65da8712419ac3268f9b70eb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickUpFlashlightBehaviour
+  lightManager: {fileID: 0}
+--- !u!33 &1687254355
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687254352}
+  m_Mesh: {fileID: 0}
 --- !u!1 &1814740673
 GameObject:
   m_ObjectHideFlags: 0
@@ -3243,3 +3364,4 @@ SceneRoots:
   - {fileID: 279901038}
   - {fileID: 2124984647}
   - {fileID: 1819825756}
+  - {fileID: 724866452}
