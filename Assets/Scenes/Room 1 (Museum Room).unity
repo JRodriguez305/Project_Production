@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.02
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.08744216, g: 0.09576021, b: 0.14150944, a: 1}
+  m_AmbientSkyColor: {r: 0.211812, g: 0.21841347, b: 0.2679245, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -8156,7 +8156,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8a9a9eb630f92434388ed7e04c99a4c2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2055141586}
   m_SourcePrefab: {fileID: 100100000, guid: 8a9a9eb630f92434388ed7e04c99a4c2, type: 3}
 --- !u!1 &1166413245
 GameObject:
@@ -8982,6 +8985,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.006
       objectReference: {fileID: 0}
+    - target: {fileID: -6568641538671995824, guid: e6673c92f916e4b4eb196f2d166e8d47, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7e6063bbaee79584c91b3005ad39da58, type: 2}
     - target: {fileID: -5333829487836676476, guid: e6673c92f916e4b4eb196f2d166e8d47, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -10035,8 +10042,8 @@ MonoBehaviour:
   m_text: "\u201CThis cake reminds me of the first birthday I can remember. Gosh,
     I had SO MUCH cake then.. Just, how many did I eat?\u201D"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -11058,7 +11065,7 @@ MonoBehaviour:
   keypad: {fileID: 652329452}
   interactText: {fileID: 726328454}
   promptMessage: Press E to Interact
-  interactDistance: 3
+  interactDistance: 1.5
 --- !u!1 &1547892158 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2857799445240370936, guid: e03080f12b30aa144830c02c438e06da, type: 3}
@@ -13763,6 +13770,32 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.010572365, y: 0.01047097, z: 0.033209234}
   m_Center: {x: -0.018638067, y: 0.15743649, z: -0.03605301}
+--- !u!1 &2055141585 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8a9a9eb630f92434388ed7e04c99a4c2, type: 3}
+  m_PrefabInstance: {fileID: 1164876517}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2055141586
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055141585}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2066628340
 GameObject:
   m_ObjectHideFlags: 0
