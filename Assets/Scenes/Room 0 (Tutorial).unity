@@ -703,6 +703,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickUpFlashlightBehaviour
   lightManager: {fileID: 7817766007833058640}
+  spotlight: {fileID: 1572396179}
+  pointlight: {fileID: 566234542}
 --- !u!65 &546679094
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2408,6 +2410,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickUpFlashlightBehaviour
   lightManager: {fileID: 7817766007833058640}
+  spotlight: {fileID: 0}
+  pointlight: {fileID: 0}
 --- !u!1 &1814740673
 GameObject:
   m_ObjectHideFlags: 0

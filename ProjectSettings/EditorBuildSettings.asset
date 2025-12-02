@@ -14,5 +14,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Room 1 (Museum Room).unity
     guid: 169cf39e664f7214393870276020b220
+  - enabled: 1
+    path: Assets/Scenes/Room 2 (Liminal Room).unity
+    guid: 9d50093ba424c3c4cabb89073dba9bc9
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
