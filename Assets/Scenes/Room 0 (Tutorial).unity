@@ -473,7 +473,14 @@ MonoBehaviour:
   paperImage: {fileID: 40967977}
   bodyText: {fileID: 66105653}
   interactionPrompt: {fileID: 1047945122}
-  textToShow: This is the torn note...
+  textToShow: 'The light has always shown you path through the darkness, but the
+    violet light shall show what is hidden
+
+
+    (Press F to change to Flashlight
+    to UV Light)
+
+'
 --- !u!65 &129955709
 BoxCollider:
   m_ObjectHideFlags: 0
