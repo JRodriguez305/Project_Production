@@ -4,7 +4,7 @@ public class SpinningWallBehaviour : MonoBehaviour
 {
     public Vector3 rotationSpeed = new Vector3(0f, 200f, 0f);
 
-    private bool isSpinning = true;
+    public bool isSpinning = false;
 
     void Update()
     {
@@ -12,5 +12,10 @@ public class SpinningWallBehaviour : MonoBehaviour
         {
             transform.Rotate(rotationSpeed * Time.deltaTime);
         }
+    }
+
+    public void StartSpinning()
+    {
+        isSpinning = true;
     }
 }

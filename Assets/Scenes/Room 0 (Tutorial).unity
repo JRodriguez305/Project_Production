@@ -3721,7 +3721,7 @@ MonoBehaviour:
   messageText: {fileID: 218226288}
   promptMessage: Left Click to Interact
   pickupMessage: 
-  interactRange: 1
+  interactRange: 0.9
   messageDuration: 1.5
   pickupSound: {fileID: 0}
 --- !u!114 &2038269841
