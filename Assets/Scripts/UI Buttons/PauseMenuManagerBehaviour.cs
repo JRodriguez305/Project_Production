@@ -3,6 +3,7 @@ using UnityEngine;
 public class PauseMenuManagerBehaviour : MonoBehaviour
 {
     public GameObject pauseMenu;
+    public GameObject controlMenu;
     public FirstPersonPlayerMovementBehaviour cameraScript;
     public static bool isPaused = false;
 
@@ -29,6 +30,7 @@ public class PauseMenuManagerBehaviour : MonoBehaviour
     public void Resume()
     {
         pauseMenu.SetActive(false);
+        controlMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -49,5 +51,11 @@ public class PauseMenuManagerBehaviour : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+
+    public void Controls()
+    {
+        pauseMenu.SetActive(false);
+        controlMenu.SetActive(true);
     }
 }
