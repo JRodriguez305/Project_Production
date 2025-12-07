@@ -17,5 +17,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Room 2 (Liminal Room).unity
     guid: 9d50093ba424c3c4cabb89073dba9bc9
+  - enabled: 1
+    path: Assets/Scenes/Room 3 (Ending).unity
+    guid: 3be5707b7163a9542a7008cf5033e9d7
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

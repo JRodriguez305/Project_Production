@@ -9993,8 +9993,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.00091423996, y: 0.0009401589, z: 0.0009401589}
-  m_Center: {x: 0.00010616816, y: 4.6882537e-10, z: -1.3096722e-10}
+  m_Size: {x: 0.0016789439, y: 0.0040100757, z: 0.002128312}
+  m_Center: {x: -0.00027618365, y: -0.000028958662, z: 0.00007308024}
 --- !u!114 &1306000606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15717,6 +15717,18 @@ PrefabInstance:
     - target: {fileID: 1352729256107280465, guid: 077d8deeedb4c0e4cbb7448716665880, type: 3}
       propertyPath: m_Name
       value: Player 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1398339574218304338, guid: 077d8deeedb4c0e4cbb7448716665880, type: 3}
+      propertyPath: m_Height
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1398339574218304338, guid: 077d8deeedb4c0e4cbb7448716665880, type: 3}
+      propertyPath: m_Radius
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1398339574218304338, guid: 077d8deeedb4c0e4cbb7448716665880, type: 3}
+      propertyPath: m_Center.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1630547056836103553, guid: 077d8deeedb4c0e4cbb7448716665880, type: 3}
       propertyPath: m_Color.b
