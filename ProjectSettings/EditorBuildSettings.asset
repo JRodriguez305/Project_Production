@@ -20,5 +20,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Room 3 (Ending).unity
     guid: 3be5707b7163a9542a7008cf5033e9d7
+  - enabled: 1
+    path: Assets/Scenes/Win_Scene.unity
+    guid: a7605120842d6e747b9fe28f904a951e
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

@@ -984,7 +984,10 @@ MonoBehaviour:
   requiredItemName: TeddyBear
   mementoItemPrefab: {fileID: 381914726}
   playedDialogue:
-    speech: bear
+    speech: "\u201CMy parents always ridiculed me for everything. \u2018Do better,
+      you\u2019ll be a loser if you don\u2019t pass\u2019.. Worst of all, calling
+      the career I wanted \u2018not real\u2019 and that I shouldn\u2019t bother with
+      it. It\u2019s why I\u2019m a med student, after all..\u201D"
     OnDialogueDisplayed:
       m_PersistentCalls:
         m_Calls: []
@@ -1014,8 +1017,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0009910234, y: 0.0010191192, z: 0.0010191193}
-  m_Center: {x: 0.0001150848, y: -4.6223148e-10, z: -1.4551915e-10}
+  m_Size: {x: 0.0009910234, y: 0.0027588736, z: 0.002157356}
+  m_Center: {x: 0.00011508479, y: -0.00006993055, z: 0.00007527705}
 --- !u!114 &229146882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1034,6 +1037,18 @@ MonoBehaviour:
     itemName: 
   inventory: {fileID: 0}
   uvFlashlight: {fileID: 346158982}
+--- !u!114 &229146883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229146876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460d6d40e52f0e6488b4ca48ff840eb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorknobBehaviour
 --- !u!1 &233320758
 GameObject:
   m_ObjectHideFlags: 0
@@ -1184,6 +1199,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: c89e6c4062b9fb340b4683c8e8ca46ce, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 25fb20db9a28bae47a9267b87ae09e53, type: 2}
     - target: {fileID: 919132149155446097, guid: c89e6c4062b9fb340b4683c8e8ca46ce, type: 3}
       propertyPath: m_Name
       value: Book
@@ -1389,7 +1408,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 16, y: 2}
-  m_SizeDelta: {x: 579.5137, y: 122.0498}
+  m_SizeDelta: {x: 675.06, y: 150.4}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &311344887
 MonoBehaviour:
@@ -1555,6 +1574,59 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.17218517, y: 0.31900078, z: 0}
   m_Center: {x: -0.000000007450581, y: 0.0000000074505793, z: -0.2931286}
+--- !u!1 &326558430
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 326558432}
+  - component: {fileID: 326558431}
+  m_Layer: 0
+  m_Name: ColliderFix_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &326558431
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326558430}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.7455027, y: 0.46625727, z: 0.6441536}
+  m_Center: {x: -0.082341075, y: 0.26687136, z: 0.3300991}
+--- !u!4 &326558432
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326558430}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.18, y: 0.965, z: -48.143}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &335081815 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1875230036635654710, guid: e5574a9a969ac784082435de05b225c4, type: 3}
@@ -2017,6 +2089,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 8009aefb680e3a141a98034783f38494, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4b8f61c6be1845f4b9d7ce6015a93325, type: 2}
     - target: {fileID: 919132149155446097, guid: 8009aefb680e3a141a98034783f38494, type: 3}
       propertyPath: m_Name
       value: Cash Register (1)
@@ -2112,6 +2188,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f87a01865f3ae4741b02aecf37e8d0ff, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0dd6124106fe50e4d880eb00ffebef3d, type: 2}
     - target: {fileID: 919132149155446097, guid: f87a01865f3ae4741b02aecf37e8d0ff, type: 3}
       propertyPath: m_Name
       value: Teddy Bear
@@ -2135,6 +2215,59 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f87a01865f3ae4741b02aecf37e8d0ff, type: 3}
   m_PrefabInstance: {fileID: 381914724}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &391727835
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 391727837}
+  - component: {fileID: 391727836}
+  m_Layer: 0
+  m_Name: ColliderFix_3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &391727836
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 391727835}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.6323147, y: 0.46625727, z: 0.58229446}
+  m_Center: {x: -0.02574706, y: 0.26687136, z: 0.29916954}
+--- !u!4 &391727837
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 391727835}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.082, y: 0.965, z: -48.143}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &443441015
 GameObject:
   m_ObjectHideFlags: 0
@@ -3344,6 +3477,59 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!1 &1025674706
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1025674708}
+  - component: {fileID: 1025674707}
+  m_Layer: 0
+  m_Name: ColliderFix_4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1025674707
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025674706}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.6323147, y: 0.46625727, z: 0.6205063}
+  m_Center: {x: -0.02574706, y: 0.26687136, z: 0.31827545}
+--- !u!4 &1025674708
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025674706}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.28, y: 0.965, z: -49.234}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1099190533 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4687572340715491555, guid: e5574a9a969ac784082435de05b225c4, type: 3}
@@ -4003,11 +4189,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 311344886}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1, y: 0}
+  m_SizeDelta: {x: 675, y: 150}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &1402964379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4028,7 +4214,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4071,7 +4257,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_TextWrappingMode: 0
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -4093,7 +4279,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 8, y: 4, z: 1, w: 1}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4155,6 +4341,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: a9c3dc6f030ee704bb6573a48932bd31, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3ea4eee419dfc1746882ee3a9ffe8ffd, type: 2}
     - target: {fileID: 919132149155446097, guid: a9c3dc6f030ee704bb6573a48932bd31, type: 3}
       propertyPath: m_Name
       value: Broken Heart
@@ -4503,7 +4693,10 @@ MonoBehaviour:
   requiredItemName: Heart
   mementoItemPrefab: {fileID: 1445155624}
   playedDialogue:
-    speech: cheated
+    speech: "\u201CI got into a relationship when I first went into college. It felt
+      good to have someone to talk to that wasn\u2019t my family.. But six months
+      went by and I found them with another person. They broke up with me on the
+      spot. I cut my hair off that day, with tears on my face..\u201D"
     OnDialogueDisplayed:
       m_PersistentCalls:
         m_Calls: []
@@ -4937,6 +5130,59 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1588214163
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1588214164}
+  - component: {fileID: 1588214165}
+  m_Layer: 0
+  m_Name: ColliderFix_1
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1588214164
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588214163}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.081, y: 0.965, z: -46.949}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1588214165
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588214163}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.8073542, y: 0.46625727, z: 0.5770912}
+  m_Center: {x: -0.113266826, y: 0.26687136, z: 0.29656792}
 --- !u!1 &1650744067 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7698561681537791784, guid: e5574a9a969ac784082435de05b225c4, type: 3}
@@ -5059,7 +5305,9 @@ MonoBehaviour:
   requiredItemName: Book
   mementoItemPrefab: {fileID: 277002254}
   playedDialogue:
-    speech: studying
+    speech: "\u201CEight classes in one year.. It was so brutal. Having to shove
+      everything away and focus only on that. I remember crying myself to sleep,
+      dreading the day I wake up again\u201D"
     OnDialogueDisplayed:
       m_PersistentCalls:
         m_Calls: []
@@ -5440,6 +5688,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -6077054081991150680, guid: e5574a9a969ac784082435de05b225c4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 229146882}
+    - targetCorrespondingSourceObject: {fileID: -6077054081991150680, guid: e5574a9a969ac784082435de05b225c4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 229146883}
     - targetCorrespondingSourceObject: {fileID: -8474323897919053160, guid: e5574a9a969ac784082435de05b225c4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1228748944}
@@ -6241,7 +6492,10 @@ MonoBehaviour:
   requiredItemName: Register
   mementoItemPrefab: {fileID: 376587361}
   playedDialogue:
-    speech: work sucks
+    speech: "\u201CMy first job was a cashier. It was terrible. I was treated like
+      crap by the customers, and soon enough my coworkers made fun of me for almost
+      anything.. Hair, clothes, speech even. I left after a few months.. And no one
+      even said goodbye to me.\u201D"
     OnDialogueDisplayed:
       m_PersistentCalls:
         m_Calls: []
@@ -6400,10 +6654,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -6473,3 +6727,7 @@ SceneRoots:
   - {fileID: 856926060}
   - {fileID: 289867663}
   - {fileID: 2145596140}
+  - {fileID: 1588214164}
+  - {fileID: 326558432}
+  - {fileID: 391727837}
+  - {fileID: 1025674708}

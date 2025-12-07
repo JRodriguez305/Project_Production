@@ -9,7 +9,7 @@ public class MementoItemPlacerBehaviour : MonoBehaviour
     private GameObject mementoItemPrefab;
 
     [SerializeField]
-    private Dialogue playedDialogue;
+    private Dialogue playedDialogue; // delete if dialogue is changed
 
     public InventoryBehaviour inventory;
     public PuzzleTwoManagerBehaviour puzzleManager;
@@ -35,6 +35,7 @@ public class MementoItemPlacerBehaviour : MonoBehaviour
                 puzzleManager.ItemPlaced();
             }
 
+            // Remove this if statement if dialogue is changed
             if (playedDialogue != null)
             {
                 DialogueHolderBehaviour.OnSayDialogue?.Invoke(playedDialogue);

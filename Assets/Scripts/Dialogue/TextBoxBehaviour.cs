@@ -42,7 +42,7 @@ public class TextBoxBehaviour : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(4f);
 
         transform.localScale = Vector3.zero;
 
