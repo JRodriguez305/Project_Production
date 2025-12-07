@@ -8,6 +8,9 @@ public class MementoItemPlacerBehaviour : MonoBehaviour
     [SerializeField]
     private GameObject mementoItemPrefab;
 
+    [SerializeField]
+    private Dialogue playedDialogue;
+
     public InventoryBehaviour inventory;
     public PuzzleTwoManagerBehaviour puzzleManager;
 
@@ -30,6 +33,11 @@ public class MementoItemPlacerBehaviour : MonoBehaviour
             if (puzzleManager != null)
             {
                 puzzleManager.ItemPlaced();
+            }
+
+            if (playedDialogue != null)
+            {
+                DialogueHolderBehaviour.OnSayDialogue?.Invoke(playedDialogue);
             }
 
             this.enabled = false;
