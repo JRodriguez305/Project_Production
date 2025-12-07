@@ -484,6 +484,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: a9c3dc6f030ee704bb6573a48932bd31, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3ea4eee419dfc1746882ee3a9ffe8ffd, type: 2}
     - target: {fileID: 919132149155446097, guid: a9c3dc6f030ee704bb6573a48932bd31, type: 3}
       propertyPath: m_Name
       value: Broken Heart
@@ -555,6 +559,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 8009aefb680e3a141a98034783f38494, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4b8f61c6be1845f4b9d7ce6015a93325, type: 2}
     - target: {fileID: 919132149155446097, guid: 8009aefb680e3a141a98034783f38494, type: 3}
       propertyPath: m_Name
       value: Cash Register
@@ -3884,6 +3892,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f87a01865f3ae4741b02aecf37e8d0ff, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0dd6124106fe50e4d880eb00ffebef3d, type: 2}
     - target: {fileID: 919132149155446097, guid: f87a01865f3ae4741b02aecf37e8d0ff, type: 3}
       propertyPath: m_Name
       value: Teddy Bear
@@ -4350,6 +4362,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: c89e6c4062b9fb340b4683c8e8ca46ce, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 25fb20db9a28bae47a9267b87ae09e53, type: 2}
     - target: {fileID: 919132149155446097, guid: c89e6c4062b9fb340b4683c8e8ca46ce, type: 3}
       propertyPath: m_Name
       value: Book
