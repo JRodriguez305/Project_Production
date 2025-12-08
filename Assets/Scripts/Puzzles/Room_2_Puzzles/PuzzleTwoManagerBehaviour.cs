@@ -6,6 +6,17 @@ public class PuzzleTwoManagerBehaviour : MonoBehaviour
     private int placedItems = 0;
 
     public SpinningWallBehaviour spinningWall;
+    public GameObject doorknob;
+
+    public AudioSource audio;
+
+    void Awake()
+    {
+        if (doorknob != null)
+        {
+            doorknob.SetActive(false);
+        }
+    }
 
     public void ItemPlaced()
     {
@@ -14,10 +25,8 @@ public class PuzzleTwoManagerBehaviour : MonoBehaviour
 
         if (placedItems >= requiredItems)
         {
-            if (spinningWall != null)
-            {
-                spinningWall.StartSpinning();
-            }
+            audio.Play();
+            doorknob.SetActive(true);
         }
     }
 }
