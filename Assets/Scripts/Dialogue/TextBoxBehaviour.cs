@@ -39,10 +39,10 @@ public class TextBoxBehaviour : MonoBehaviour
         for (int i = 0; i < _dialogue.speech.Length; i++)
         {
             speechTMP.text += _dialogue.speech[i];
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.09f);
         }
 
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
 
         transform.localScale = Vector3.zero;
 

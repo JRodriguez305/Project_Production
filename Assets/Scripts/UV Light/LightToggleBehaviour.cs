@@ -7,6 +7,8 @@ public class LightToggleBehaviour : MonoBehaviour
 
     private bool isOn = false;
 
+    //public AudioSource audio;
+
     void Start()
     {
         uvLight.SetActive(false);
@@ -17,6 +19,7 @@ public class LightToggleBehaviour : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
+            //audio.Play();
             ToggleLight();
         }
     }

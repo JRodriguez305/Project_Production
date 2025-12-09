@@ -1010,10 +1010,9 @@ MonoBehaviour:
   requiredItemName: TeddyBear
   mementoItemPrefab: {fileID: 381914726}
   playedDialogue:
-    speech: "\u201CMy parents always ridiculed me for everything. \u2018Do better,
-      you\u2019ll be a loser if you don\u2019t pass\u2019.. Worst of all, calling
-      the career I wanted \u2018not real\u2019 and that I shouldn\u2019t bother with
-      it. It\u2019s why I\u2019m a med student, after all..\u201D"
+    speech: "\u201CMy parents always ridiculed me for everything. \u2018I\u2019m
+      disappointed in you\u2019 is all I heard. It\u2019s why I\u2019m a med student,
+      so I don\u2019t fail them.. and make them happy.\u201D"
     OnDialogueDisplayed:
       m_PersistentCalls:
         m_Calls: []
@@ -1488,8 +1487,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 16, y: 2}
-  m_SizeDelta: {x: 675.06, y: 150.4}
+  m_AnchoredPosition: {x: 55.033524, y: 2}
+  m_SizeDelta: {x: 753.127, y: 170.5463}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &311344887
 MonoBehaviour:
@@ -4398,8 +4397,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1, y: 0}
-  m_SizeDelta: {x: 675, y: 150}
+  m_AnchoredPosition: {x: -0.000061035156, y: -10.272995}
+  m_SizeDelta: {x: 747.9238, y: 150}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1402964379
 MonoBehaviour:
@@ -4486,7 +4485,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 8, y: 4, z: 1, w: 1}
+  m_margin: {x: 10, y: 4, z: 2, w: 3}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4965,10 +4964,9 @@ MonoBehaviour:
   requiredItemName: Heart
   mementoItemPrefab: {fileID: 1445155624}
   playedDialogue:
-    speech: "\u201CI got into a relationship when I first went into college. It felt
-      good to have someone to talk to that wasn\u2019t my family.. But six months
-      went by and I found them with another person. They broke up with me on the
-      spot. I cut my hair off that day, with tears on my face..\u201D"
+    speech: "\u201CI got into a relationship when I first went into college. Six
+      months went by and they cheated on me, then just broke up with me. You think
+      you can trust someone.. never again.\u201D"
     OnDialogueDisplayed:
       m_PersistentCalls:
         m_Calls: []
@@ -5580,8 +5578,7 @@ MonoBehaviour:
   mementoItemPrefab: {fileID: 277002254}
   playedDialogue:
     speech: "\u201CEight classes in one year.. It was so brutal. Having to shove
-      everything away and focus only on that. I remember crying myself to sleep,
-      dreading the day I wake up again\u201D"
+      everything away and focus only on that. I don\u2019t want to wake up tomorrow.\u201D"
     OnDialogueDisplayed:
       m_PersistentCalls:
         m_Calls: []
@@ -7131,10 +7128,9 @@ MonoBehaviour:
   requiredItemName: Register
   mementoItemPrefab: {fileID: 376587361}
   playedDialogue:
-    speech: "\u201CMy first job was a cashier. It was terrible. I was treated like
-      crap by the customers, and soon enough my coworkers made fun of me for almost
-      anything.. Hair, clothes, speech even. I left after a few months.. And no one
-      even said goodbye to me.\u201D"
+    speech: "\u201CMy first job was a cashier. It was terrible. Being treated like
+      crap and ridiculed by the other employees. I haven\u2019t shown up in a week..
+      and no one even cared.\u201D"
     OnDialogueDisplayed:
       m_PersistentCalls:
         m_Calls: []
