@@ -1,24 +1,65 @@
 using UnityEngine;
+using TMPro;
 
 public class MementoItemPlacerBehaviour : MonoBehaviour
 {
-    [SerializeField]
-    private string requiredItemName;
+    [Header("Required Item")]
+    [SerializeField] private string requiredItemName;
 
-    [SerializeField]
-    private GameObject mementoItemPrefab;
-
-    [SerializeField]
-    private Dialogue playedDialogue; // delete if dialogue is changed
+    [Header("References")]
+    [SerializeField] private GameObject mementoItemPrefab;
+    [SerializeField] private Dialogue playedDialogue;
 
     public InventoryBehaviour inventory;
     public PuzzleTwoManagerBehaviour puzzleManager;
 
-    void OnMouseDown()
+    [Header("UI Prompt")]
+    [SerializeField] private GameObject interactPrompt;   // Assign UI object here
+    [SerializeField] private string promptMessage = "Left Click to place item";
+
+    private TextMeshProUGUI promptText;
+    private bool isLookingAt = false;
+
+    void Start()
+    {
+        if (interactPrompt != null)
+        {
+            promptText = interactPrompt.GetComponentInChildren<TextMeshProUGUI>();
+            if (promptText) promptText.text = promptMessage;
+
+            interactPrompt.SetActive(false);
+        }
+    }
+
+    void OnMouseEnter()
+    {
+        if (HasItem())
+        {
+            if (interactPrompt != null)
+                interactPrompt.SetActive(true);
+
+            isLookingAt = true;
+        }
+    }
+
+    void OnMouseExit()
+    {
+        if (interactPrompt != null)
+            interactPrompt.SetActive(false);
+
+        isLookingAt = false;
+    }
+
+    void Update()
+    {
+        if (isLookingAt && Input.GetMouseButtonDown(0))
+            TryPlace();
+    }
+
+    private void TryPlace()
     {
         var items = inventory.GetInventoryItems();
-
-        InventoryItem mementoItem = items.Find(items => items.itemName == requiredItemName);
+        InventoryItem mementoItem = items.Find(i => i.itemName == requiredItemName);
 
         if (mementoItem != null)
         {
@@ -26,22 +67,24 @@ public class MementoItemPlacerBehaviour : MonoBehaviour
             inventory.OnInventoryItemChange?.Invoke();
 
             if (mementoItemPrefab != null)
-            {
                 mementoItemPrefab.SetActive(true);
-            }
 
             if (puzzleManager != null)
-            {
                 puzzleManager.ItemPlaced();
-            }
 
-            // Remove this if statement if dialogue is changed
             if (playedDialogue != null)
-            {
                 DialogueHolderBehaviour.OnSayDialogue?.Invoke(playedDialogue);
-            }
+
+            if (interactPrompt != null)
+                interactPrompt.SetActive(false);
 
             this.enabled = false;
         }
+    }
+
+    private bool HasItem()
+    {
+        var items = inventory.GetInventoryItems();
+        return items.Exists(i => i.itemName == requiredItemName);
     }
 }
