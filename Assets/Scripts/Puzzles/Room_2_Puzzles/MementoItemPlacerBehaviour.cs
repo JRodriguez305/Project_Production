@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 
 public class MementoItemPlacerBehaviour : MonoBehaviour
@@ -14,11 +14,16 @@ public class MementoItemPlacerBehaviour : MonoBehaviour
     public PuzzleTwoManagerBehaviour puzzleManager;
 
     [Header("UI Prompt")]
-    [SerializeField] private GameObject interactPrompt;   // Assign UI object here
+    [SerializeField] private GameObject interactPrompt;
     [SerializeField] private string promptMessage = "Left Click to place item";
 
     private TextMeshProUGUI promptText;
     private bool isLookingAt = false;
+
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip placeSound;
+
 
     void Start()
     {
@@ -72,6 +77,10 @@ public class MementoItemPlacerBehaviour : MonoBehaviour
             if (puzzleManager != null)
                 puzzleManager.ItemPlaced();
 
+            // ▶ PLAY SOUND
+            if (audioSource && placeSound)
+                audioSource.PlayOneShot(placeSound);
+
             if (playedDialogue != null)
                 DialogueHolderBehaviour.OnSayDialogue?.Invoke(playedDialogue);
 
@@ -88,3 +97,4 @@ public class MementoItemPlacerBehaviour : MonoBehaviour
         return items.Exists(i => i.itemName == requiredItemName);
     }
 }
+

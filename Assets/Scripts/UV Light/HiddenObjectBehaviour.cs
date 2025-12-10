@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 [RequireComponent(typeof(Renderer), typeof(Collider))]
 public class HiddenObjectBehaviour : MonoBehaviour
@@ -9,34 +10,63 @@ public class HiddenObjectBehaviour : MonoBehaviour
     private Collider col;
 
     private bool isRevealed = false;
+    private bool isLookingAt = false;
 
     public string requiredTag = "Hidden";
     public float revealDistance = 8f;
 
+    [Header("Inventory")]
     [SerializeField] private InventoryItem itemToAdd;
     [SerializeField] private InventoryBehaviour inventory;
 
     public Light uvFlashlight;
+
+    [Header("UI Prompt")]
+    [SerializeField] private GameObject interactPrompt;
+    [SerializeField] private string interactMessage = "Left Click to pick up";
+    private TextMeshProUGUI promptText;
+
+    [Header("Audio")]
+    [SerializeField] private AudioClip pickupSound;
+
+    [Header("Audio Settings")]
+    [SerializeField, Range(0f, 1f)] private float pickupVolume = 1f;         // volume
+    [SerializeField, Range(0.1f, 10f)] private float pickupDuration = 1f;   // duration of sound in seconds
+
 
     void Start()
     {
         rend = GetComponent<Renderer>();
         col = GetComponent<Collider>();
 
-        if (rend != null)
+        if (interactPrompt != null)
         {
-            Hidden();
+            promptText = interactPrompt.GetComponentInChildren<TextMeshProUGUI>();
+            if (promptText != null)
+                promptText.text = interactMessage;
+
+            interactPrompt.SetActive(false);
         }
+
+        Hidden();
     }
 
     void Update()
     {
         HandleRevealLogic();
+
+        // check pickup input while looking at the object
+        if (isLookingAt && Input.GetMouseButtonDown(0))
+            TryPickup();
     }
 
+
+    //------------------------------------
+    // Reveal logic
+    //------------------------------------
     void HandleRevealLogic()
     {
-        if (uvFlashlight.enabled && uvFlashlight.gameObject.activeInHierarchy)
+        if (uvFlashlight != null && uvFlashlight.enabled && uvFlashlight.gameObject.activeInHierarchy)
         {
             Vector3 toObject = transform.position - uvFlashlight.transform.position;
             float distance = toObject.magnitude;
@@ -44,10 +74,8 @@ public class HiddenObjectBehaviour : MonoBehaviour
 
             bool inCone = distance < revealDistance && angle < uvFlashlight.spotAngle * 0.5f;
 
-            if (inCone)
-                Reveal();
-            else
-                Hide();
+            if (inCone) Reveal();
+            else Hide();
         }
         else
         {
@@ -83,35 +111,80 @@ public class HiddenObjectBehaviour : MonoBehaviour
         }
     }
 
+
+    //------------------------------------
+    // Hover UI
+    //------------------------------------
+    private void OnMouseEnter()
+    {
+        if (isRevealed && interactPrompt != null)
+        {
+            interactPrompt.SetActive(true);
+            isLookingAt = true;
+        }
+    }
+
+    private void OnMouseExit()
+    {
+        if (interactPrompt != null)
+            interactPrompt.SetActive(false);
+
+        isLookingAt = false;
+    }
+
+
+    //------------------------------------
+    // Pickup logic with volume & duration
+    //------------------------------------
+    private void TryPickup()
+    {
+        if (!isRevealed) return;
+
+        if (pickupSound != null && Camera.main != null)
+        {
+            // Create temporary audio object at camera position
+            GameObject tempAudio = new GameObject("TempPickupAudio");
+            tempAudio.transform.position = Camera.main.transform.position;
+
+            AudioSource aSource = tempAudio.AddComponent<AudioSource>();
+            aSource.clip = pickupSound;
+            aSource.volume = pickupVolume;
+            aSource.spatialBlend = 0f; // 2D sound
+            aSource.Play();
+
+            // Destroy temporary object after specified duration
+            Destroy(tempAudio, pickupDuration);
+        }
+
+        // Add item to inventory
+        if (inventory != null && itemToAdd != null)
+            inventory.AddInventoryItem(itemToAdd);
+
+        // Hide prompt
+        if (interactPrompt != null)
+            interactPrompt.SetActive(false);
+
+        // Destroy object
+        Destroy(gameObject);
+    }
+
     private void OnMouseDown()
     {
         if (isRevealed && CompareTag(requiredTag))
-        {
-            Debug.Log("Picked up item");
-            inventory.AddInventoryItem(itemToAdd);
-            Destroy(gameObject);
-        }
+            TryPickup();
+    }
+
+    //------------------------------------
+    // Interact method for other scripts
+    //------------------------------------
+    public void Interact()
+    {
+        TryPickup();
     }
 
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.magenta;
         Gizmos.DrawWireSphere(transform.position, revealDistance);
-    }
-
-    // ✅ New method added for player interaction
-    public void Interact()
-    {
-        Debug.Log("Player interacted with hidden object.");
-
-        // Optionally add to inventory
-        if (inventory != null && itemToAdd != null)
-        {
-            inventory.AddInventoryItem(itemToAdd);
-            Destroy(gameObject);
-        }
-
-        // Immediately destroy the object
-        Destroy(gameObject);
     }
 }
