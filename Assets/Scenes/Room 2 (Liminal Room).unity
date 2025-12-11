@@ -1344,6 +1344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 460d6d40e52f0e6488b4ca48ff840eb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorknobBehaviour
+  sceneTransition: {fileID: 730315194}
 --- !u!1 &233320758
 GameObject:
   m_ObjectHideFlags: 0
@@ -1555,6 +1556,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PauseMenuManagerBehaviour
   pauseMenu: {fileID: 94936910}
   controlMenu: {fileID: 1964921940}
+  keypadMenu: {fileID: 0}
   cameraScript: {fileID: 88251203}
 --- !u!114 &289867660
 MonoBehaviour:
@@ -3088,7 +3090,7 @@ MonoBehaviour:
   interactPrompt: {fileID: 39237427}
   interactMessage: Left Click to pick up
   pickupSound: {fileID: 8300000, guid: 318f04572511e8f4f8f8094457da0d2c, type: 3}
-  pickupVolume: 1
+  pickupVolume: 0.2
   pickupDuration: 2
 --- !u!1 &519114406 stripped
 GameObject:
@@ -4671,7 +4673,7 @@ MonoBehaviour:
   interactPrompt: {fileID: 39237427}
   interactMessage: Left Click to pick up
   pickupSound: {fileID: 8300000, guid: 318f04572511e8f4f8f8094457da0d2c, type: 3}
-  pickupVolume: 1
+  pickupVolume: 0.2
   pickupDuration: 2
 --- !u!1 &1166784972
 GameObject:
@@ -5706,7 +5708,7 @@ MonoBehaviour:
   interactPrompt: {fileID: 39237427}
   interactMessage: Left Click to pick up
   pickupSound: {fileID: 8300000, guid: 318f04572511e8f4f8f8094457da0d2c, type: 3}
-  pickupVolume: 1
+  pickupVolume: 0.2
   pickupDuration: 2
 --- !u!1 &1511238624
 GameObject:
@@ -7579,7 +7581,7 @@ MonoBehaviour:
   interactPrompt: {fileID: 39237427}
   interactMessage: Left Click to pick up
   pickupSound: {fileID: 8300000, guid: 318f04572511e8f4f8f8094457da0d2c, type: 3}
-  pickupVolume: 1
+  pickupVolume: 0.2
   pickupDuration: 2
 --- !u!1 &1972724942
 GameObject:

@@ -7,6 +7,7 @@ public class RippedPaperInteract : MonoBehaviour
     [Header("Interaction")]
     public float interactDistance = 3f;
     Camera cam;
+    public FirstPersonPlayerMovementBehaviour cameraScript;
 
     [Header("UI - Note Panel")]
     public CanvasGroup paperCanvasGroup;
@@ -78,6 +79,7 @@ public class RippedPaperInteract : MonoBehaviour
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        cameraScript.enabled = false;
 
         Time.timeScale = 0f; // optional pause
     }
@@ -90,6 +92,7 @@ public class RippedPaperInteract : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        cameraScript.enabled = true;
 
         Time.timeScale = 1f;
     }

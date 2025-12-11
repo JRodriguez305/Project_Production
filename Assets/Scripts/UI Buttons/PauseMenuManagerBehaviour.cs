@@ -4,6 +4,7 @@ public class PauseMenuManagerBehaviour : MonoBehaviour
 {
     public GameObject pauseMenu;
     public GameObject controlMenu;
+    public GameObject keypadMenu;
     public FirstPersonPlayerMovementBehaviour cameraScript;
     public static bool isPaused = false;
 
@@ -43,6 +44,7 @@ public class PauseMenuManagerBehaviour : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         cameraScript.enabled = false;
+        keypadMenu.SetActive(false);
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;

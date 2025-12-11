@@ -21,6 +21,7 @@ public class KeypadManager : MonoBehaviour
     [Header("Player References")]
     public MonoBehaviour playerController;  // movement script
     public Camera playerCamera;
+    public FirstPersonPlayerMovementBehaviour cameraScript;
 
     [Header("Object To Remove When Correct")]
     public GameObject objectToRemove;
@@ -47,6 +48,7 @@ public class KeypadManager : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        cameraScript.enabled = false;
 
         if (playerController != null)
             playerController.enabled = false;
@@ -62,6 +64,7 @@ public class KeypadManager : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        cameraScript.enabled = true;
 
         if (playerController != null)
             playerController.enabled = true;

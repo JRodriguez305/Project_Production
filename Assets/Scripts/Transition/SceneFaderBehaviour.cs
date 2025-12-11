@@ -2,6 +2,15 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+public enum FadeType
+{
+    Shutters,
+    RadialWipe,
+    PlainBlack,
+    Goop
+}
+
 public class SceneFaderBehaviour : MonoBehaviour
 {
     public float fadeDuration = 1f;
@@ -19,14 +28,6 @@ public class SceneFaderBehaviour : MonoBehaviour
     private Image image;
     private Material material;
 
-    public enum FadeType
-    {
-        Shutters,
-        RadialWipe,
-        PlainBlack,
-        Goop
-    }
-
     private void Awake()
     {
         image = GetComponent<Image>();
@@ -43,10 +44,10 @@ public class SceneFaderBehaviour : MonoBehaviour
         FadeIn(currentFadeType);
     }
 
-    public void FadeOut(FadeType fadeType)
+    public void FadeOut(FadeType fadeType, System.Action onComplete = null)
     {
         ChangeFadeEffect(fadeType);
-        StartFadeOut();
+        StartFadeOut(onComplete);
     }
 
     public void FadeIn(FadeType fadeType)
@@ -93,11 +94,11 @@ public class SceneFaderBehaviour : MonoBehaviour
         lastEffect = effectToTurnOn;
     }
 
-    private void StartFadeOut()
+    public void StartFadeOut(System.Action onComplete = null)
     {
         material.SetFloat(_fadeAmount, 0f);
 
-        StartCoroutine(HandleFade(1f, 0f));
+        StartCoroutine(HandleFade(1f, 0f, onComplete));
     }
 
     private void StartFadeIn()
@@ -107,7 +108,7 @@ public class SceneFaderBehaviour : MonoBehaviour
         StartCoroutine(HandleFade(0f, 1f));
     }
 
-    private IEnumerator HandleFade(float targetAmount, float startAmount)
+    public IEnumerator HandleFade(float targetAmount, float startAmount, System.Action onComplete = null)
     {
         float elapsedTime = 0f;
         while (elapsedTime < fadeDuration)
@@ -121,6 +122,8 @@ public class SceneFaderBehaviour : MonoBehaviour
         }
 
         material.SetFloat(_fadeAmount, targetAmount);
+
+        onComplete?.Invoke();
     }
 
     private IEnumerator FadeOutAfterDelay(float delay)
