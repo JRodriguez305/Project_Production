@@ -7,8 +7,8 @@ public class KeypadTrigger : MonoBehaviour
     public KeypadManager keypad;
 
     [Header("UI")]
-    public TMP_Text interactText;       // "Press E to Interact"
-    public string promptMessage = "Press E to Interact";
+    public TMP_Text interactText;       // "Left-Click to Interact"
+    public string promptMessage = "Left-Click to Interact";
 
     [Header("Settings")]
     public float interactDistance = 3f;
@@ -67,7 +67,7 @@ public class KeypadTrigger : MonoBehaviour
         // --------------------------------------------
         // 🔥 4. Press E to open keypad
         // --------------------------------------------
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetMouseButtonDown(0))
         {
             keypad.ShowKeypad();
 

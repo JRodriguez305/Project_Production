@@ -108,7 +108,13 @@ public class ObjectInteract : MonoBehaviour
     void Pickup()
     {
         interacted = true;
+        isNear = false;
         HidePrompt();
+
+        if (interactPrompt != null)
+        {
+            SetAlpha(interactPrompt, 0f);
+        }
 
         if (messageText != null)
         {

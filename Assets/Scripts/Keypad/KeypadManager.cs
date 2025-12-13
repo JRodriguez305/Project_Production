@@ -25,6 +25,7 @@ public class KeypadManager : MonoBehaviour
 
     [Header("Object To Remove When Correct")]
     public GameObject objectToRemove;
+    public KeypadTrigger trigger;
 
     [Header("Events")]
     public UnityEvent onCorrect;
@@ -112,6 +113,7 @@ public class KeypadManager : MonoBehaviour
                 Destroy(objectToRemove);
 
             onCorrect?.Invoke();
+            trigger.enabled = false;
 
             HideKeypad();
         }

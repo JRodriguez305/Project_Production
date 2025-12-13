@@ -2479,7 +2479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeypadTrigger
   keypad: {fileID: 652329452}
   interactText: {fileID: 726328454}
-  promptMessage: Press E to Interact
+  promptMessage: Left-Click to Interact
   interactDistance: 1.5
 --- !u!1 &236905797
 GameObject:
@@ -5650,6 +5650,7 @@ MonoBehaviour:
   playerCamera: {fileID: 0}
   cameraScript: {fileID: 145615225}
   objectToRemove: {fileID: 1493455114}
+  trigger: {fileID: 235266777}
   onCorrect:
     m_PersistentCalls:
       m_Calls: []

@@ -341,7 +341,7 @@ MonoBehaviour:
   m_text: New Text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 402bb45ac2259da49b2aada3a482995e, type: 2}
-  m_sharedMaterial: {fileID: 7497578616029534840, guid: 402bb45ac2259da49b2aada3a482995e, type: 2}
+  m_sharedMaterial: {fileID: -8907035686007900044, guid: 402bb45ac2259da49b2aada3a482995e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -397,7 +397,7 @@ MonoBehaviour:
   m_isCullingEnabled: 0
   m_horizontalMapping: 0
   m_verticalMapping: 0
-  m_uvLineOffset: 0
+  m_uvLineOffset: 1
   m_geometrySortingOrder: 0
   m_IsTextObjectScaleStatic: 0
   m_VertexBufferAutoSizeReduction: 0
@@ -3318,7 +3318,7 @@ MonoBehaviour:
   messageText: {fileID: 218226288}
   promptMessage: Left Click to Interact
   pickupMessage: Item Acquired!
-  interactRange: 2
+  interactRange: 1.5
   messageDuration: 2.5
   pickupSound: {fileID: 0}
 --- !u!65 &1678862723
